@@ -34,7 +34,11 @@ public class BoardController {
 		list = service.list();
 		model.addAttribute("list", list);
 	}
+	//로그인
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public void getLogin() throws Exception {
 
+	}
 	//게시물 작성
 	@RequestMapping(value = "/write", method = RequestMethod.GET)
 	public void getWirte() throws Exception {

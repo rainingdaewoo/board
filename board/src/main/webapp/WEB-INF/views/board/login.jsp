@@ -18,7 +18,23 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../../resources/css/styles.css" rel="stylesheet" />
-    </head>
+	<link rel="stylesheet" href="../../resources/css/login_style.css">
+	
+	<script src="jquery-3.6.0.min.js">
+		
+	</script>
+	<style type="text/css">
+	.login-form {
+		font-family: 'Noto Sans KR', sans-serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background: url("sr.jpg") no repeat center;
+		background-size: cover;
+	}
+	</style>
+	</head>
     <body>
     	
     	
@@ -35,7 +51,7 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="./home.jsp">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="./listPageSearch?num=1">게시글 목록</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/write">게시글 작성</a></li>
-                       <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/login">로그인</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="./board/contact.html">로그인</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,80 +74,38 @@
 		<div class="container px-4 px-lg-5">
 			<div class="row gx-4 gx-lg-5 justify-content-center">
 				<div class="col-md-10 col-lg-8 col-xl-7">
-					<table>
-						<thead>
-							<tr>
-								<th>번호</th>
-								<th>제목</th>
-								<th>작성일</th>
-								<th>작성자</th>
-								<th>조회수</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<c:forEach items="${list}" var="list">
-								<tr>
-									<td>${list.bno}</td>
-									<td><a href="/board/view?bno=${list.bno}">${list.title}</a>
-									</td>
-									<td><fmt:formatDate value="${list.regDate}"
-											pattern="yyyy-MM-dd" /></td>
-									<td>${list.writer}</td>
-									<td>${list.viewCnt}</td>
-								</tr>
-							</c:forEach>
-						</tbody>
-
-					</table>
-
-					<div>
-						<c:if test="${page.prev}">
-							<span>[ <a
-								href="/board/listPageSearch?num=${page.startPageNum - 1}${page.searchTypeKeyword}">이전</a>
-								]
-							</span>
-						</c:if>
-
-						<c:forEach begin="${page.startPageNum}" end="${page.endPageNum}"
-							var="num">
-							<span> <c:if test="${select != num}">
-									<a
-										href="/board/listPageSearch?num=${num}${page.searchTypeKeyword}">${num}</a>
-								</c:if> <c:if test="${select == num}">
-									<b>${num}</b>
-								</c:if>
-
-							</span>
-						</c:forEach>
-
-						<c:if test="${page.next}">
-							<span>[ <a
-								href="/board/listPageSearch?num=${page.endPageNum + 1}${page.searchTypeKeyword}">다음</a>
-								]
-							</span>
-						</c:if>
-
-						<div>
-							<select name="searchType">
-								<option value="title"
-									<c:if test="${page.searchType eq 'title'}">selected</c:if>>제목</option>
-								<option value="content"
-									<c:if test="${page.searchType eq 'content'}">selected</c:if>>내용</option>
-								<option value="title_content"
-									<c:if test="${page.searchType eq 'title_content'}">selected</c:if>>제목+내용</option>
-								<option value="writer"
-									<c:if test="${page.searchType eq 'writer'}">selected</c:if>>작성자</option>
-							</select> <input type="text" name="keyword" value="${page.keyword}" />
-
-							<button type="button" id="searchBtn">검색</button>
+					<section class="login-form">
+						
+						<form action="">
+							<h1>#HEALTH</h1>
+							<div class="int-area">
+								<input type="text" name="id" id="id" autocomplete="off" required>
+								<label for="id">USER NAME</label>
+							</div>
+							<div class="int-area">
+								<input type="password" name="pw" id="pw" autocomplete="off"
+									required> <label for="pw">PASSWORD</label>
+							</div>
+							<div class="btn-area">
+								<button id="btn" type="submit">LOGIN</button>
+							</div>
+							<div class="caption">
+							<a href="#">Join / </a>
+							<a href="#">Forgot ID? / </a>
+							<a href="#">Forgot Password?</a>
 						</div>
-					</div>
+						<!-- <div>
+							<a href="#">Join</a>
+							<a href="#">아이디 찾기</a>
+							<a href="#"></a>
+						</div> -->
+						</form>
+						
+					</section>
 				</div>
 			</div>
 		</div>
 	</article>
-
 	<!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
@@ -185,10 +159,3 @@
 </script>
     </body>
 </html>
-
-
-
-
-
-	
-	
