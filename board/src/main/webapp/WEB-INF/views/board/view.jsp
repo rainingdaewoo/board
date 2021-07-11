@@ -19,6 +19,16 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../../resources/css/styles.css" rel="stylesheet" />
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		
+		<!-- 부가적인 테마 -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		
+		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		
+        
     </head>
     <body>
     	
@@ -33,8 +43,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="./home.jsp">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="./listPageSearch?num=1">게시글 목록</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="../home.jsp">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="./listPageSearch?num=1">자유게시판</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/write">게시글 작성</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="login.jsp">로그인</a></li>
                     </ul>
@@ -47,18 +57,15 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Health Blog</h1>
-                            <span class="subheading">다 같이 성장할 수 있는 운동 블로그</span>
+                           <h1>Do it now </h1>
+                            <span class="subheading">오늘 끝나고 뭐하시나요?</span>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Main Content-->
-        <article class="mb-4">
-		<div class="container px-4 px-lg-5">
-			<div class="row gx-4 gx-lg-5 justify-content-center">
-				<div class="col-md-10 col-lg-8 col-xl-7">
+         <div class="container">
 		
 	
 	<label>제목</label> 
@@ -69,9 +76,9 @@
 
 	<label>내용</label><br /> 
 	${view.content}<br />
-
-	<div>
-	<a href="/board/modify?bno=${view.bno}">게시물 수정</a>, <a href="/board/delete?bno=${view.bno}">게시물 삭제</a>
+	<!-- 나중에 버튼으로 바꾼 뒤 캡처 -->
+	<div> 
+		<a href="/board/modify?bno=${view.bno}">게시물 수정</a> <a href="/board/delete?bno=${view.bno}">게시물 삭제</a>
 	</div>
 	
 	<!-- 댓글 시작 -->
@@ -96,6 +103,7 @@
             <label>댓글 작성자</label> <input type="text" name="writer">
         </p>
         <p>
+        	<label>댓글 내용</label><br>
             <textarea rows="5" cols="50" name="content"></textarea>
         </p>
         <p>
@@ -108,9 +116,6 @@
 
 	<!-- 댓글 끝 -->
 	</div>
-				</div>
-			</div>
-	</article>
 	<!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">

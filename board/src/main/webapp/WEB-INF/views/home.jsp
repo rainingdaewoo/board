@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="./board/listPageSearch?num=1">게시글 목록</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="./board/listPageSearch?num=1">자유게시판</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/write">게시글 작성</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/login">로그인</a></li>
                     </ul>
@@ -48,8 +48,8 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Health Blog</h1>
-                            <span class="subheading">다 같이 성장할 수 있는 운동 블로그</span>
+                            <h1>Do it now </h1>
+                            <span class="subheading">오늘 끝나고 뭐하시나요?</span>
                         </div>
                     </div>
                 </div>
@@ -68,8 +68,8 @@
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 24, 2021
+                            <a href="#!">김우중</a>
+                           	2021-07-10
                         </p>
                     </div>
                     <!-- Divider-->
@@ -78,12 +78,12 @@
                     <div class="post-preview">
                            <a href="post.html">
                             <h2 class="post-title">스트레칭의 필요성</h2>
-                            <h3 class="post-subtitle">필수적인 스트레칭에 대해 소개하겠습니다.</h3>
+                            <h3 class="post-subtitle">다들 운동 전 스트레칭 하고 계신가요?</h3>
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 18, 2021
+                            <a href="#!">김우중</a>
+                           	2021-07-10
                         </p>
                     </div>
                     <!-- Divider-->
@@ -91,13 +91,13 @@
                     <!-- Post preview-->
                     <div class="post-preview">
                         <a href="post.html">
-                            <h2 class="post-title">프로틴과 크레아틴의 효능</h2>
-                            <h3 class="post-subtitle">프로틴과 크레아틴... 정말 먹어야 할까요?</h3>
+                            <h2 class="post-title">크레아틴의 효능</h2>
+                            <h3 class="post-subtitle">크레아틴... 정말 먹어야 할까요?</h3>
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on August 24, 2021
+                            <a href="#!">김우중</a>
+                           	2021-07-10
                         </p>
                     </div>
                     <!-- Divider-->
@@ -110,8 +110,8 @@
                         </a>
                         <p class="post-meta">
                             Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on July 8, 2021
+                            <a href="#!">김우중</a>
+                           	2021-07-10
                         </p>
                     </div>
                     <!-- Divider-->

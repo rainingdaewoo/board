@@ -18,7 +18,16 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../../resources/css/styles.css" rel="stylesheet" />
-    </head>
+        <!-- 합쳐지고 최소화된 최신 CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		
+		<!-- 부가적인 테마 -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		
+		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		
+	</head>
     <body>
     	
     	
@@ -32,8 +41,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="./home.jsp">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="./listPageSearch?num=1">게시글 목록</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="../home.jsp">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="./listPageSearch?num=1">자유게시판</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/write">게시글 작성</a></li>
                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/board/login">로그인</a></li>
                     </ul>
@@ -46,19 +55,16 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Health Blog</h1>
-                            <span class="subheading">다 같이 성장할 수 있는 운동 블로그</span>
+                            <h1>Do it now </h1>
+                            <span class="subheading">오늘 끝나고 뭐하시나요?</span>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Main Content-->
-	<article class="mb-4">
-		<div class="container px-4 px-lg-5">
-			<div class="row gx-4 gx-lg-5 justify-content-center">
-				<div class="col-md-10 col-lg-8 col-xl-7">
-					<table>
+        <div class="container">
+					<table class="table table-hover">
 						<thead>
 							<tr>
 								<th>번호</th>
@@ -82,14 +88,16 @@
 								</tr>
 							</c:forEach>
 						</tbody>
-
 					</table>
-
+					<div >
+						<button type="button" class="btn btn-default" id="writeBtn">작성</button>	
+					
+					</div>
 					<div>
+						<div class="col-md-offset-3">	
+						<ul>
 						<c:if test="${page.prev}">
-							<span>[ <a
-								href="/board/listPageSearch?num=${page.startPageNum - 1}${page.searchTypeKeyword}">이전</a>
-								]
+							<span> [<a href="/board/listPageSearch?num=${page.startPageNum - 1}${page.searchTypeKeyword}">이전</a>]
 							</span>
 						</c:if>
 
@@ -107,13 +115,15 @@
 
 						<c:if test="${page.next}">
 							<span>[ <a
-								href="/board/listPageSearch?num=${page.endPageNum + 1}${page.searchTypeKeyword}">다음</a>
+href="/board/listPageSearch?num=${page.endPageNum + 1}${page.searchTypeKeyword}">다음</a>
 								]
 							</span>
 						</c:if>
-
-						<div>
-							<select name="searchType">
+						</ul>
+						</div>
+						<div class="search row">
+						<div class="col-xs2 col-sm-2">
+							<select name="searchType" class="form-control">
 								<option value="title"
 									<c:if test="${page.searchType eq 'title'}">selected</c:if>>제목</option>
 								<option value="content"
@@ -122,16 +132,20 @@
 									<c:if test="${page.searchType eq 'title_content'}">selected</c:if>>제목+내용</option>
 								<option value="writer"
 									<c:if test="${page.searchType eq 'writer'}">selected</c:if>>작성자</option>
-							</select> <input type="text" name="keyword" value="${page.keyword}" />
+							</select> 
+							</div>
 
-							<button type="button" id="searchBtn">검색</button>
+						<div class="col-xs-10 col-sm-10">
+							<div class="input-group">
+							<input type="text" name="keyword" value="${page.keyword}" class="form-control"/>
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" id="searchBtn">검색</button>
+						</span>
+							</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</article>
-
 	<!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
